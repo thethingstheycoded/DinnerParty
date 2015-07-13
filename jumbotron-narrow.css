@@ -3,7 +3,7 @@ body {
   font-family: 'Rock Salt', cursive;
   /*padding-top: 20px; */
   padding-bottom: 20px;
-  background-image: url("Italy.jpg");
+  background-image: url("https://raw.githubusercontent.com/thethingstheycoded/DinnerParty/master/Italy.jpg");
   background-repeat: no-repeat;
   background-position: center top;
 }
