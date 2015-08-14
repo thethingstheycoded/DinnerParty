@@ -16,6 +16,7 @@
     <!-- Bootstrap core CSS -->
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
 
     <!-- Custom styles for this template -->
     <link href="jumbotron-narrow.css" rel="stylesheet">
@@ -23,13 +24,32 @@
  </head>
 
   <body>
-
+    
+    <!-- Modal Picture Viewer -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Nom nom nom ...</h4>
+          </div>
+          <div class="modal-body">
+            <img class="img-responsive img-rounded" alt="Zuchinni Carpaccio" src="https://raw.githubusercontent.com/thethingstheycoded/DinnerParty/master/20150718_Zucchini.jpg" />
+          </div>
+        </div>
+      </div>
+    </div> <!-- end Modal -->
+    
     <div class="container">
         <div class="jumbotron">
             <h1>The Last Supper</h1>
             <br />
             <p class="lead">Cheese and Charcuterie</p>
-            <p class="lead">Zucchini Carpaccio</p>
+            <p class="lead">Zucchini Carpaccio 
+              <span data-toggle="modal" data-target="#myModal" class="pointer">
+                <span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
+              </span>
+            </p>
             <p class="lead">Pasta Carbonara</p>
             <p class="lead">Deconstructed Bellinis</p>  
     		</div>
@@ -53,14 +73,24 @@
         <p>Saturday July 18, 2015</p>
         <p>5 p.m. until</p>
       </footer>
-
+<!--      <div class="row">
+        <div class="col-md-4 20150718_zucchini">
+          <img src="https://raw.githubusercontent.com/thethingstheycoded/DinnerParty/master/20150718_zucchini_thumb.jpg" />
+        </div>
+        <div class="col-md-4 20150718_pasta">
+          <img src="https://raw.githubusercontent.com/thethingstheycoded/DinnerParty/master/20150718_pasta_thumb.jpg" />
+        </div>
+        <div class="col-md-4 20150718_sorbet">
+          <img src="https://raw.githubusercontent.com/thethingstheycoded/DinnerParty/master/20150718_sorbet_thumb.jpg" />
+        </div>
+      </div> -->
     </div> <!-- /container -->
 
 		<!-- Bootstrap core JavaScript
 		================================================== -->
 		<!-- Latest compiled and minified JavaScript -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>      
   </body>
 </html>
 

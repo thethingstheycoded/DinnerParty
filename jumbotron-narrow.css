@@ -90,3 +90,11 @@ body {
   }
 }
 
+/* fix the z-indexing of the modal picture window */
+.modal-backdrop {
+    z-index: 1020;
+}
+
+.pointer {
+  cursor: pointer;
+}
