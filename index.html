@@ -34,7 +34,7 @@
             <h4 class="modal-title" id="myModalLabel">Nom nom nom ...</h4>
           </div>
           <div class="modal-body">
-            <img class="img-responsive img-rounded" alt="Zuchinni Carpaccio" src="https://raw.githubusercontent.com/thethingstheycoded/DinnerParty/master/20150718_Zucchini.jpg" />
+            <img class="img-responsive img-rounded" id="img-dinner-course" alt="Pasta Carbonara" src="" />
           </div>
         </div>
       </div>
@@ -46,12 +46,20 @@
             <br />
             <p class="lead">Cheese and Charcuterie</p>
             <p class="lead">Zucchini Carpaccio 
-              <span data-toggle="modal" data-target="#myModal" class="pointer">
+              <span data-toggle="modal" data-target="#myModal" data-course-img="Zucchini" data-course-title="Zucchini Carpaccio" class="pointer">
                 <span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
               </span>
             </p>
-            <p class="lead">Pasta Carbonara</p>
-            <p class="lead">Deconstructed Bellinis</p>  
+            <p class="lead">Pasta Carbonara
+              <span data-toggle="modal" data-target="#myModal" data-course-img="Pasta" data-course-title="Pasta Carbonara" class="pointer">
+                <span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
+              </span>
+            </p>
+            <p class="lead">Deconstructed Bellinis
+              <span data-toggle="modal" data-target="#myModal" data-course-img="Sorbet" data-course-title="Deconstructed Bellinis" class="pointer">
+                <span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
+              </span>
+            </p>  
     		</div>
         <br />
         <br />
@@ -73,24 +81,34 @@
         <p>Saturday July 18, 2015</p>
         <p>5 p.m. until</p>
       </footer>
-<!--      <div class="row">
-        <div class="col-md-4 20150718_zucchini">
-          <img src="https://raw.githubusercontent.com/thethingstheycoded/DinnerParty/master/20150718_zucchini_thumb.jpg" />
-        </div>
-        <div class="col-md-4 20150718_pasta">
-          <img src="https://raw.githubusercontent.com/thethingstheycoded/DinnerParty/master/20150718_pasta_thumb.jpg" />
-        </div>
-        <div class="col-md-4 20150718_sorbet">
-          <img src="https://raw.githubusercontent.com/thethingstheycoded/DinnerParty/master/20150718_sorbet_thumb.jpg" />
-        </div>
-      </div> -->
     </div> <!-- /container -->
 
 		<!-- Bootstrap core JavaScript
 		================================================== -->
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>      
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>    
+    
+    
+    <!-- Javascript for images modal -->
+    <script type="text/javascript">
+            
+      $('#myModal').on('show.bs.modal', function (event) {
+        
+        // object that triggered the modal
+        var courseSpan = $(event.relatedTarget); 
+        
+        // Extract info from data-* attributes
+        var imgFileName = courseSpan.data('course-img');
+        var titleName = courseSpan.data('course-title'); 
+        
+        // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+        $('#img-dinner-course').attr('src','https://raw.githubusercontent.com/thethingstheycoded/DinnerParty/master/20150718_'+imgFileName+'.jpg');
+        $('#myModalLabel').text(titleName);
+      })
+      
+    </script>
+      
   </body>
 </html>
 
